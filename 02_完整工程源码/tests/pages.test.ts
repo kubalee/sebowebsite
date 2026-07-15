@@ -1,8 +1,12 @@
 import { mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import { V6Site } from "../src/V6Site";
+import { services } from "../src/data/content";
 
 describe("SEBO Vue pages", () => {
+  it("uses a distinct image for every Laidianla service card", () => {
+    expect(new Set(services.map((service) => service.image)).size).toBe(services.length);
+  });
   it("renders the Chinese home page", () => {
     const wrapper = mount(V6Site, { props: { route: "/" } });
     expect(wrapper.text()).toContain("让电像空气一样自由");
