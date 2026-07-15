@@ -80,7 +80,7 @@ export const services = [
   ["emergency", "Emergency Response", "应急救援", "在车辆停下前后接住能源与服务，按工单协调补能、诊断和救援。", "恢复时间与工单闭环"],
   ["battery-bank", "Battery Bank", "电池银行", "把电池身份、健康、质保、调度和残值纳入可运营的资产账本。", "电池全生命周期运营"],
   ["partner-network", "Partner Network", "合作网络", "让本地服务能力进入统一标准、质量、培训、工单和结算体系。", "标准化生态交付"],
-].map(([slug, en, title, body, result], index) => ({ slug: `laidianla/${slug}`, en, title, body, result, image: asset(["v6/mobile-service.webp", "official/engineering-team.png", "editorial/energyos-lab.jpg", "editorial/platform-hero.jpg", "v6/mine-energy.webp", "v6/team-office.webp", "v6/logistics-mobile.webp", "v6/team-outdoor.webp", "official/thunderbird-product.png", "v6/team-factory.webp"][index]) }));
+].map(([slug, en, title, body, result], index) => ({ slug: `laidianla/${slug}`, en, title, body, result, image: asset(["v6/mobile-service.webp", "official/engineering-team.png", "editorial/energyos-lab.jpg", "editorial/platform-hero.jpg", "v6/mine-energy.webp", "cortex/cortex-12.webp", "v6/logistics-mobile.webp", "editorial/mobile-truck.jpg", "official/thunderbird-product.png", "v6/team-factory.webp"][index]) }));
 
 export const newsItems = [
   { slug: "v6-blueprint", date: "2026.07.13", type: "网站更新", title: "SEBO V6：围绕客户结果、工程证据与真实行动重建数字门面", en: "SEBO V6: rebuilt around customer outcomes, engineering evidence and real action", image: asset("v6/co-design.webp") },
