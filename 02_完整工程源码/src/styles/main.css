@@ -214,3 +214,10 @@ textarea:focus-visible {
     animation-iteration-count: 1 !important;
   }
 }
+
+/* Keep the primary solution cards visually centered in their white section. */
+.card-section{padding:clamp(48px,6vw,88px) var(--side) clamp(64px,7vw,96px)}
+
+@media(max-width:640px){
+  .card-section{padding:36px 20px 58px}
+}
