@@ -19,6 +19,7 @@
 *.pem
 .DS_Store
 Thumbs.db
+.worktrees/
 
 # Generated deployment archives (reproducible and too large for source control)
 03_部署构建产物/*.tar
