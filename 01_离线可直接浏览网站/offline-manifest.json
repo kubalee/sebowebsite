@@ -1,0 +1,1047 @@
+{
+  "edition": "SEBO Official Website V6",
+  "generatedAt": "2026-07-13T10:56:55.503Z",
+  "pageCount": 208,
+  "routes": [
+    {
+      "route": "/",
+      "file": "index.html",
+      "bytes": 21030
+    },
+    {
+      "route": "about",
+      "file": "about/index.html",
+      "bytes": 8288
+    },
+    {
+      "route": "about/company",
+      "file": "about/company/index.html",
+      "bytes": 8208
+    },
+    {
+      "route": "about/culture",
+      "file": "about/culture/index.html",
+      "bytes": 8226
+    },
+    {
+      "route": "about/hangzhou",
+      "file": "about/hangzhou/index.html",
+      "bytes": 8180
+    },
+    {
+      "route": "about/qiantang",
+      "file": "about/qiantang/index.html",
+      "bytes": 8295
+    },
+    {
+      "route": "about/rd-quality",
+      "file": "about/rd-quality/index.html",
+      "bytes": 8263
+    },
+    {
+      "route": "about/wisdom",
+      "file": "about/wisdom/index.html",
+      "bytes": 8161
+    },
+    {
+      "route": "applications",
+      "file": "applications/index.html",
+      "bytes": 14534
+    },
+    {
+      "route": "applications/100x70t-station",
+      "file": "applications/100x70t-station/index.html",
+      "bytes": 9306
+    },
+    {
+      "route": "applications/airport-rail",
+      "file": "applications/airport-rail/index.html",
+      "bytes": 9277
+    },
+    {
+      "route": "applications/bus-hub",
+      "file": "applications/bus-hub/index.html",
+      "bytes": 9253
+    },
+    {
+      "route": "applications/data-center-backup",
+      "file": "applications/data-center-backup/index.html",
+      "bytes": 9315
+    },
+    {
+      "route": "applications/highway-service",
+      "file": "applications/highway-service/index.html",
+      "bytes": 9312
+    },
+    {
+      "route": "applications/logistics-park",
+      "file": "applications/logistics-park/index.html",
+      "bytes": 9291
+    },
+    {
+      "route": "applications/marine-port",
+      "file": "applications/marine-port/index.html",
+      "bytes": 9252
+    },
+    {
+      "route": "applications/medical-backup",
+      "file": "applications/medical-backup/index.html",
+      "bytes": 9346
+    },
+    {
+      "route": "applications/mine-port-heavy",
+      "file": "applications/mine-port-heavy/index.html",
+      "bytes": 9308
+    },
+    {
+      "route": "applications/plateau-border",
+      "file": "applications/plateau-border/index.html",
+      "bytes": 9315
+    },
+    {
+      "route": "applications/remote-offgrid",
+      "file": "applications/remote-offgrid/index.html",
+      "bytes": 9312
+    },
+    {
+      "route": "applications/retrofit-mine-truck",
+      "file": "applications/retrofit-mine-truck/index.html",
+      "bytes": 9322
+    },
+    {
+      "route": "applications/rural-agri",
+      "file": "applications/rural-agri/index.html",
+      "bytes": 9290
+    },
+    {
+      "route": "applications/smart-park-campus",
+      "file": "applications/smart-park-campus/index.html",
+      "bytes": 9297
+    },
+    {
+      "route": "applications/tourism",
+      "file": "applications/tourism/index.html",
+      "bytes": 9203
+    },
+    {
+      "route": "applications/trunk-heavy",
+      "file": "applications/trunk-heavy/index.html",
+      "bytes": 9265
+    },
+    {
+      "route": "applications/v2x-emergency",
+      "file": "applications/v2x-emergency/index.html",
+      "bytes": 9321
+    },
+    {
+      "route": "careers",
+      "file": "careers/index.html",
+      "bytes": 7967
+    },
+    {
+      "route": "careers/apply",
+      "file": "careers/apply/index.html",
+      "bytes": 9397
+    },
+    {
+      "route": "cases",
+      "file": "cases/index.html",
+      "bytes": 8035
+    },
+    {
+      "route": "contact",
+      "file": "contact/index.html",
+      "bytes": 9264
+    },
+    {
+      "route": "contact/channel",
+      "file": "contact/channel/index.html",
+      "bytes": 9392
+    },
+    {
+      "route": "contact/media",
+      "file": "contact/media/index.html",
+      "bytes": 9384
+    },
+    {
+      "route": "contact/product-selection",
+      "file": "contact/product-selection/index.html",
+      "bytes": 9426
+    },
+    {
+      "route": "contact/project",
+      "file": "contact/project/index.html",
+      "bytes": 9364
+    },
+    {
+      "route": "contact/supplier",
+      "file": "contact/supplier/index.html",
+      "bytes": 9396
+    },
+    {
+      "route": "contact/technical",
+      "file": "contact/technical/index.html",
+      "bytes": 9381
+    },
+    {
+      "route": "contact/visit",
+      "file": "contact/visit/index.html",
+      "bytes": 9396
+    },
+    {
+      "route": "downloads",
+      "file": "downloads/index.html",
+      "bytes": 7708
+    },
+    {
+      "route": "downloads/action",
+      "file": "downloads/action/index.html",
+      "bytes": 9409
+    },
+    {
+      "route": "en",
+      "file": "en/index.html",
+      "bytes": 21632
+    },
+    {
+      "route": "en/about",
+      "file": "en/about/index.html",
+      "bytes": 8431
+    },
+    {
+      "route": "en/about/company",
+      "file": "en/about/company/index.html",
+      "bytes": 8272
+    },
+    {
+      "route": "en/about/culture",
+      "file": "en/about/culture/index.html",
+      "bytes": 8294
+    },
+    {
+      "route": "en/about/hangzhou",
+      "file": "en/about/hangzhou/index.html",
+      "bytes": 8259
+    },
+    {
+      "route": "en/about/qiantang",
+      "file": "en/about/qiantang/index.html",
+      "bytes": 8369
+    },
+    {
+      "route": "en/about/rd-quality",
+      "file": "en/about/rd-quality/index.html",
+      "bytes": 8359
+    },
+    {
+      "route": "en/about/wisdom",
+      "file": "en/about/wisdom/index.html",
+      "bytes": 8233
+    },
+    {
+      "route": "en/applications",
+      "file": "en/applications/index.html",
+      "bytes": 14911
+    },
+    {
+      "route": "en/applications/100x70t-station",
+      "file": "en/applications/100x70t-station/index.html",
+      "bytes": 9436
+    },
+    {
+      "route": "en/applications/airport-rail",
+      "file": "en/applications/airport-rail/index.html",
+      "bytes": 9432
+    },
+    {
+      "route": "en/applications/bus-hub",
+      "file": "en/applications/bus-hub/index.html",
+      "bytes": 9404
+    },
+    {
+      "route": "en/applications/data-center-backup",
+      "file": "en/applications/data-center-backup/index.html",
+      "bytes": 9464
+    },
+    {
+      "route": "en/applications/highway-service",
+      "file": "en/applications/highway-service/index.html",
+      "bytes": 9458
+    },
+    {
+      "route": "en/applications/logistics-park",
+      "file": "en/applications/logistics-park/index.html",
+      "bytes": 9442
+    },
+    {
+      "route": "en/applications/marine-port",
+      "file": "en/applications/marine-port/index.html",
+      "bytes": 9401
+    },
+    {
+      "route": "en/applications/medical-backup",
+      "file": "en/applications/medical-backup/index.html",
+      "bytes": 9484
+    },
+    {
+      "route": "en/applications/mine-port-heavy",
+      "file": "en/applications/mine-port-heavy/index.html",
+      "bytes": 9448
+    },
+    {
+      "route": "en/applications/plateau-border",
+      "file": "en/applications/plateau-border/index.html",
+      "bytes": 9453
+    },
+    {
+      "route": "en/applications/remote-offgrid",
+      "file": "en/applications/remote-offgrid/index.html",
+      "bytes": 9452
+    },
+    {
+      "route": "en/applications/retrofit-mine-truck",
+      "file": "en/applications/retrofit-mine-truck/index.html",
+      "bytes": 9471
+    },
+    {
+      "route": "en/applications/rural-agri",
+      "file": "en/applications/rural-agri/index.html",
+      "bytes": 9446
+    },
+    {
+      "route": "en/applications/smart-park-campus",
+      "file": "en/applications/smart-park-campus/index.html",
+      "bytes": 9449
+    },
+    {
+      "route": "en/applications/tourism",
+      "file": "en/applications/tourism/index.html",
+      "bytes": 9358
+    },
+    {
+      "route": "en/applications/trunk-heavy",
+      "file": "en/applications/trunk-heavy/index.html",
+      "bytes": 9409
+    },
+    {
+      "route": "en/applications/v2x-emergency",
+      "file": "en/applications/v2x-emergency/index.html",
+      "bytes": 9478
+    },
+    {
+      "route": "en/careers",
+      "file": "en/careers/index.html",
+      "bytes": 8060
+    },
+    {
+      "route": "en/careers/apply",
+      "file": "en/careers/apply/index.html",
+      "bytes": 9572
+    },
+    {
+      "route": "en/cases",
+      "file": "en/cases/index.html",
+      "bytes": 8165
+    },
+    {
+      "route": "en/contact",
+      "file": "en/contact/index.html",
+      "bytes": 9439
+    },
+    {
+      "route": "en/contact/channel",
+      "file": "en/contact/channel/index.html",
+      "bytes": 9567
+    },
+    {
+      "route": "en/contact/media",
+      "file": "en/contact/media/index.html",
+      "bytes": 9559
+    },
+    {
+      "route": "en/contact/product-selection",
+      "file": "en/contact/product-selection/index.html",
+      "bytes": 9601
+    },
+    {
+      "route": "en/contact/project",
+      "file": "en/contact/project/index.html",
+      "bytes": 9539
+    },
+    {
+      "route": "en/contact/supplier",
+      "file": "en/contact/supplier/index.html",
+      "bytes": 9571
+    },
+    {
+      "route": "en/contact/technical",
+      "file": "en/contact/technical/index.html",
+      "bytes": 9556
+    },
+    {
+      "route": "en/contact/visit",
+      "file": "en/contact/visit/index.html",
+      "bytes": 9571
+    },
+    {
+      "route": "en/downloads",
+      "file": "en/downloads/index.html",
+      "bytes": 7890
+    },
+    {
+      "route": "en/downloads/action",
+      "file": "en/downloads/action/index.html",
+      "bytes": 9584
+    },
+    {
+      "route": "en/insights",
+      "file": "en/insights/index.html",
+      "bytes": 7794
+    },
+    {
+      "route": "en/insights/action",
+      "file": "en/insights/action/index.html",
+      "bytes": 9593
+    },
+    {
+      "route": "en/laidianla",
+      "file": "en/laidianla/index.html",
+      "bytes": 11943
+    },
+    {
+      "route": "en/laidianla/battery-bank",
+      "file": "en/laidianla/battery-bank/index.html",
+      "bytes": 8173
+    },
+    {
+      "route": "en/laidianla/battery-bank/start",
+      "file": "en/laidianla/battery-bank/start/index.html",
+      "bytes": 9713
+    },
+    {
+      "route": "en/laidianla/emergency",
+      "file": "en/laidianla/emergency/index.html",
+      "bytes": 8144
+    },
+    {
+      "route": "en/laidianla/emergency/start",
+      "file": "en/laidianla/emergency/start/index.html",
+      "bytes": 9701
+    },
+    {
+      "route": "en/laidianla/mobile-charging",
+      "file": "en/laidianla/mobile-charging/index.html",
+      "bytes": 8169
+    },
+    {
+      "route": "en/laidianla/mobile-charging/start",
+      "file": "en/laidianla/mobile-charging/start/index.html",
+      "bytes": 9725
+    },
+    {
+      "route": "en/laidianla/partner-network",
+      "file": "en/laidianla/partner-network/index.html",
+      "bytes": 8158
+    },
+    {
+      "route": "en/laidianla/partner-network/start",
+      "file": "en/laidianla/partner-network/start/index.html",
+      "bytes": 9725
+    },
+    {
+      "route": "en/laidianla/smart-scrutiny",
+      "file": "en/laidianla/smart-scrutiny/index.html",
+      "bytes": 8169
+    },
+    {
+      "route": "en/laidianla/smart-scrutiny/start",
+      "file": "en/laidianla/smart-scrutiny/start/index.html",
+      "bytes": 9721
+    },
+    {
+      "route": "en/laidianla/smart-servicing",
+      "file": "en/laidianla/smart-servicing/index.html",
+      "bytes": 8178
+    },
+    {
+      "route": "en/laidianla/smart-servicing/start",
+      "file": "en/laidianla/smart-servicing/start/index.html",
+      "bytes": 9725
+    },
+    {
+      "route": "en/laidianla/smart-stewardship",
+      "file": "en/laidianla/smart-stewardship/index.html",
+      "bytes": 8184
+    },
+    {
+      "route": "en/laidianla/smart-stewardship/start",
+      "file": "en/laidianla/smart-stewardship/start/index.html",
+      "bytes": 9733
+    },
+    {
+      "route": "en/laidianla/smart-sustaining",
+      "file": "en/laidianla/smart-sustaining/index.html",
+      "bytes": 8163
+    },
+    {
+      "route": "en/laidianla/smart-sustaining/start",
+      "file": "en/laidianla/smart-sustaining/start/index.html",
+      "bytes": 9729
+    },
+    {
+      "route": "en/laidianla/start",
+      "file": "en/laidianla/start/index.html",
+      "bytes": 9565
+    },
+    {
+      "route": "en/laidianla/super-truck-station",
+      "file": "en/laidianla/super-truck-station/index.html",
+      "bytes": 8196
+    },
+    {
+      "route": "en/laidianla/super-truck-station/start",
+      "file": "en/laidianla/super-truck-station/start/index.html",
+      "bytes": 9741
+    },
+    {
+      "route": "en/laidianla/vehicle-ai",
+      "file": "en/laidianla/vehicle-ai/index.html",
+      "bytes": 8135
+    },
+    {
+      "route": "en/laidianla/vehicle-ai/start",
+      "file": "en/laidianla/vehicle-ai/start/index.html",
+      "bytes": 9705
+    },
+    {
+      "route": "en/media",
+      "file": "en/media/index.html",
+      "bytes": 7753
+    },
+    {
+      "route": "en/media/action",
+      "file": "en/media/action/index.html",
+      "bytes": 9581
+    },
+    {
+      "route": "en/news",
+      "file": "en/news/index.html",
+      "bytes": 8955
+    },
+    {
+      "route": "en/news/action",
+      "file": "en/news/action/index.html",
+      "bytes": 9561
+    },
+    {
+      "route": "en/news/application-framework",
+      "file": "en/news/application-framework/index.html",
+      "bytes": 8253
+    },
+    {
+      "route": "en/news/engineering-evidence",
+      "file": "en/news/engineering-evidence/index.html",
+      "bytes": 8233
+    },
+    {
+      "route": "en/news/v6-blueprint",
+      "file": "en/news/v6-blueprint/index.html",
+      "bytes": 8185
+    },
+    {
+      "route": "en/solutions",
+      "file": "en/solutions/index.html",
+      "bytes": 9198
+    },
+    {
+      "route": "en/solutions/assessment",
+      "file": "en/solutions/assessment/index.html",
+      "bytes": 9582
+    },
+    {
+      "route": "en/solutions/grid-to-gpu",
+      "file": "en/solutions/grid-to-gpu/index.html",
+      "bytes": 9191
+    },
+    {
+      "route": "en/solutions/grid-to-gpu/assessment",
+      "file": "en/solutions/grid-to-gpu/assessment/index.html",
+      "bytes": 9726
+    },
+    {
+      "route": "en/solutions/grid-to-wheel",
+      "file": "en/solutions/grid-to-wheel/index.html",
+      "bytes": 9336
+    },
+    {
+      "route": "en/solutions/grid-to-wheel/assessment",
+      "file": "en/solutions/grid-to-wheel/assessment/index.html",
+      "bytes": 9734
+    },
+    {
+      "route": "en/solutions/mission-to-power",
+      "file": "en/solutions/mission-to-power/index.html",
+      "bytes": 9322
+    },
+    {
+      "route": "en/solutions/mission-to-power/assessment",
+      "file": "en/solutions/mission-to-power/assessment/index.html",
+      "bytes": 9746
+    },
+    {
+      "route": "en/technology",
+      "file": "en/technology/index.html",
+      "bytes": 13354
+    },
+    {
+      "route": "en/technology/industrial-cortex",
+      "file": "en/technology/industrial-cortex/index.html",
+      "bytes": 10908
+    },
+    {
+      "route": "en/technology/industrial-cortex/cortexbox",
+      "file": "en/technology/industrial-cortex/cortexbox/index.html",
+      "bytes": 11023
+    },
+    {
+      "route": "en/technology/industrial-cortex/cortexos",
+      "file": "en/technology/industrial-cortex/cortexos/index.html",
+      "bytes": 11006
+    },
+    {
+      "route": "en/technology/industrial-cortex/evidence-hash",
+      "file": "en/technology/industrial-cortex/evidence-hash/index.html",
+      "bytes": 11025
+    },
+    {
+      "route": "en/technology/industrial-cortex/industrial-cortex-pod",
+      "file": "en/technology/industrial-cortex/industrial-cortex-pod/index.html",
+      "bytes": 11101
+    },
+    {
+      "route": "en/technology/mobile-energy",
+      "file": "en/technology/mobile-energy/index.html",
+      "bytes": 10821
+    },
+    {
+      "route": "en/technology/mobile-energy/s10003ppt",
+      "file": "en/technology/mobile-energy/s10003ppt/index.html",
+      "bytes": 10910
+    },
+    {
+      "route": "en/technology/mobile-energy/s1051pcl",
+      "file": "en/technology/mobile-energy/s1051pcl/index.html",
+      "bytes": 10902
+    },
+    {
+      "route": "en/technology/mobile-energy/s20003ppt",
+      "file": "en/technology/mobile-energy/s20003ppt/index.html",
+      "bytes": 10921
+    },
+    {
+      "route": "en/technology/mobile-energy/s2003ptt",
+      "file": "en/technology/mobile-energy/s2003ptt/index.html",
+      "bytes": 10888
+    },
+    {
+      "route": "en/technology/mobile-energy/s2101pbl",
+      "file": "en/technology/mobile-energy/s2101pbl/index.html",
+      "bytes": 10900
+    },
+    {
+      "route": "en/technology/mobile-energy/s3702pst",
+      "file": "en/technology/mobile-energy/s3702pst/index.html",
+      "bytes": 10892
+    },
+    {
+      "route": "en/technology/mobile-energy/s4301ppl",
+      "file": "en/technology/mobile-energy/s4301ppl/index.html",
+      "bytes": 10895
+    },
+    {
+      "route": "en/technology/mobile-energy/s50001ppl",
+      "file": "en/technology/mobile-energy/s50001ppl/index.html",
+      "bytes": 10912
+    },
+    {
+      "route": "en/technology/powercore-sst",
+      "file": "en/technology/powercore-sst/index.html",
+      "bytes": 10785
+    },
+    {
+      "route": "en/technology/powercore-sst/sedd-60-m1",
+      "file": "en/technology/powercore-sst/sedd-60-m1/index.html",
+      "bytes": 10883
+    },
+    {
+      "route": "en/technology/powercore-sst/sepcs-135-m1",
+      "file": "en/technology/powercore-sst/sepcs-135-m1/index.html",
+      "bytes": 10905
+    },
+    {
+      "route": "en/technology/powercore-sst/sesst-10",
+      "file": "en/technology/powercore-sst/sesst-10/index.html",
+      "bytes": 10880
+    },
+    {
+      "route": "en/technology/thunderbird",
+      "file": "en/technology/thunderbird/index.html",
+      "bytes": 10819
+    },
+    {
+      "route": "en/technology/thunderbird/tb-007-13ah",
+      "file": "en/technology/thunderbird/tb-007-13ah/index.html",
+      "bytes": 10914
+    },
+    {
+      "route": "en/technology/thunderbird/tb-009-240ah",
+      "file": "en/technology/thunderbird/tb-009-240ah/index.html",
+      "bytes": 10944
+    },
+    {
+      "route": "en/technology/thunderbird/tb-qs-04ah-lto",
+      "file": "en/technology/thunderbird/tb-qs-04ah-lto/index.html",
+      "bytes": 10986
+    },
+    {
+      "route": "en/technology/thunderbird/tb-qs-08ah",
+      "file": "en/technology/thunderbird/tb-qs-08ah/index.html",
+      "bytes": 10903
+    },
+    {
+      "route": "en/technology/thunderbird/tb-qs-08ah-cold",
+      "file": "en/technology/thunderbird/tb-qs-08ah-cold/index.html",
+      "bytes": 10965
+    },
+    {
+      "route": "en/technology/wireless-power",
+      "file": "en/technology/wireless-power/index.html",
+      "bytes": 10901
+    },
+    {
+      "route": "insights",
+      "file": "insights/index.html",
+      "bytes": 7696
+    },
+    {
+      "route": "insights/action",
+      "file": "insights/action/index.html",
+      "bytes": 9418
+    },
+    {
+      "route": "laidianla",
+      "file": "laidianla/index.html",
+      "bytes": 11741
+    },
+    {
+      "route": "laidianla/battery-bank",
+      "file": "laidianla/battery-bank/index.html",
+      "bytes": 8114
+    },
+    {
+      "route": "laidianla/battery-bank/start",
+      "file": "laidianla/battery-bank/start/index.html",
+      "bytes": 9538
+    },
+    {
+      "route": "laidianla/emergency",
+      "file": "laidianla/emergency/index.html",
+      "bytes": 8079
+    },
+    {
+      "route": "laidianla/emergency/start",
+      "file": "laidianla/emergency/start/index.html",
+      "bytes": 9526
+    },
+    {
+      "route": "laidianla/mobile-charging",
+      "file": "laidianla/mobile-charging/index.html",
+      "bytes": 8107
+    },
+    {
+      "route": "laidianla/mobile-charging/start",
+      "file": "laidianla/mobile-charging/start/index.html",
+      "bytes": 9550
+    },
+    {
+      "route": "laidianla/partner-network",
+      "file": "laidianla/partner-network/index.html",
+      "bytes": 8096
+    },
+    {
+      "route": "laidianla/partner-network/start",
+      "file": "laidianla/partner-network/start/index.html",
+      "bytes": 9550
+    },
+    {
+      "route": "laidianla/smart-scrutiny",
+      "file": "laidianla/smart-scrutiny/index.html",
+      "bytes": 8108
+    },
+    {
+      "route": "laidianla/smart-scrutiny/start",
+      "file": "laidianla/smart-scrutiny/start/index.html",
+      "bytes": 9546
+    },
+    {
+      "route": "laidianla/smart-servicing",
+      "file": "laidianla/smart-servicing/index.html",
+      "bytes": 8116
+    },
+    {
+      "route": "laidianla/smart-servicing/start",
+      "file": "laidianla/smart-servicing/start/index.html",
+      "bytes": 9550
+    },
+    {
+      "route": "laidianla/smart-stewardship",
+      "file": "laidianla/smart-stewardship/index.html",
+      "bytes": 8120
+    },
+    {
+      "route": "laidianla/smart-stewardship/start",
+      "file": "laidianla/smart-stewardship/start/index.html",
+      "bytes": 9558
+    },
+    {
+      "route": "laidianla/smart-sustaining",
+      "file": "laidianla/smart-sustaining/index.html",
+      "bytes": 8106
+    },
+    {
+      "route": "laidianla/smart-sustaining/start",
+      "file": "laidianla/smart-sustaining/start/index.html",
+      "bytes": 9554
+    },
+    {
+      "route": "laidianla/start",
+      "file": "laidianla/start/index.html",
+      "bytes": 9390
+    },
+    {
+      "route": "laidianla/super-truck-station",
+      "file": "laidianla/super-truck-station/index.html",
+      "bytes": 8130
+    },
+    {
+      "route": "laidianla/super-truck-station/start",
+      "file": "laidianla/super-truck-station/start/index.html",
+      "bytes": 9566
+    },
+    {
+      "route": "laidianla/vehicle-ai",
+      "file": "laidianla/vehicle-ai/index.html",
+      "bytes": 8075
+    },
+    {
+      "route": "laidianla/vehicle-ai/start",
+      "file": "laidianla/vehicle-ai/start/index.html",
+      "bytes": 9530
+    },
+    {
+      "route": "media",
+      "file": "media/index.html",
+      "bytes": 7646
+    },
+    {
+      "route": "media/action",
+      "file": "media/action/index.html",
+      "bytes": 9406
+    },
+    {
+      "route": "news",
+      "file": "news/index.html",
+      "bytes": 8834
+    },
+    {
+      "route": "news/action",
+      "file": "news/action/index.html",
+      "bytes": 9386
+    },
+    {
+      "route": "news/application-framework",
+      "file": "news/application-framework/index.html",
+      "bytes": 8098
+    },
+    {
+      "route": "news/engineering-evidence",
+      "file": "news/engineering-evidence/index.html",
+      "bytes": 8095
+    },
+    {
+      "route": "news/v6-blueprint",
+      "file": "news/v6-blueprint/index.html",
+      "bytes": 8047
+    },
+    {
+      "route": "solutions",
+      "file": "solutions/index.html",
+      "bytes": 9109
+    },
+    {
+      "route": "solutions/assessment",
+      "file": "solutions/assessment/index.html",
+      "bytes": 9407
+    },
+    {
+      "route": "solutions/grid-to-gpu",
+      "file": "solutions/grid-to-gpu/index.html",
+      "bytes": 9038
+    },
+    {
+      "route": "solutions/grid-to-gpu/assessment",
+      "file": "solutions/grid-to-gpu/assessment/index.html",
+      "bytes": 9551
+    },
+    {
+      "route": "solutions/grid-to-wheel",
+      "file": "solutions/grid-to-wheel/index.html",
+      "bytes": 9181
+    },
+    {
+      "route": "solutions/grid-to-wheel/assessment",
+      "file": "solutions/grid-to-wheel/assessment/index.html",
+      "bytes": 9559
+    },
+    {
+      "route": "solutions/mission-to-power",
+      "file": "solutions/mission-to-power/index.html",
+      "bytes": 9161
+    },
+    {
+      "route": "solutions/mission-to-power/assessment",
+      "file": "solutions/mission-to-power/assessment/index.html",
+      "bytes": 9571
+    },
+    {
+      "route": "technology",
+      "file": "technology/index.html",
+      "bytes": 13064
+    },
+    {
+      "route": "technology/industrial-cortex",
+      "file": "technology/industrial-cortex/index.html",
+      "bytes": 10578
+    },
+    {
+      "route": "technology/industrial-cortex/cortexbox",
+      "file": "technology/industrial-cortex/cortexbox/index.html",
+      "bytes": 10675
+    },
+    {
+      "route": "technology/industrial-cortex/cortexos",
+      "file": "technology/industrial-cortex/cortexos/index.html",
+      "bytes": 10658
+    },
+    {
+      "route": "technology/industrial-cortex/evidence-hash",
+      "file": "technology/industrial-cortex/evidence-hash/index.html",
+      "bytes": 10677
+    },
+    {
+      "route": "technology/industrial-cortex/industrial-cortex-pod",
+      "file": "technology/industrial-cortex/industrial-cortex-pod/index.html",
+      "bytes": 10753
+    },
+    {
+      "route": "technology/mobile-energy",
+      "file": "technology/mobile-energy/index.html",
+      "bytes": 10467
+    },
+    {
+      "route": "technology/mobile-energy/s10003ppt",
+      "file": "technology/mobile-energy/s10003ppt/index.html",
+      "bytes": 10547
+    },
+    {
+      "route": "technology/mobile-energy/s1051pcl",
+      "file": "technology/mobile-energy/s1051pcl/index.html",
+      "bytes": 10540
+    },
+    {
+      "route": "technology/mobile-energy/s20003ppt",
+      "file": "technology/mobile-energy/s20003ppt/index.html",
+      "bytes": 10551
+    },
+    {
+      "route": "technology/mobile-energy/s2003ptt",
+      "file": "technology/mobile-energy/s2003ptt/index.html",
+      "bytes": 10532
+    },
+    {
+      "route": "technology/mobile-energy/s2101pbl",
+      "file": "technology/mobile-energy/s2101pbl/index.html",
+      "bytes": 10539
+    },
+    {
+      "route": "technology/mobile-energy/s3702pst",
+      "file": "technology/mobile-energy/s3702pst/index.html",
+      "bytes": 10525
+    },
+    {
+      "route": "technology/mobile-energy/s4301ppl",
+      "file": "technology/mobile-energy/s4301ppl/index.html",
+      "bytes": 10535
+    },
+    {
+      "route": "technology/mobile-energy/s50001ppl",
+      "file": "technology/mobile-energy/s50001ppl/index.html",
+      "bytes": 10552
+    },
+    {
+      "route": "technology/powercore-sst",
+      "file": "technology/powercore-sst/index.html",
+      "bytes": 10443
+    },
+    {
+      "route": "technology/powercore-sst/sedd-60-m1",
+      "file": "technology/powercore-sst/sedd-60-m1/index.html",
+      "bytes": 10541
+    },
+    {
+      "route": "technology/powercore-sst/sepcs-135-m1",
+      "file": "technology/powercore-sst/sepcs-135-m1/index.html",
+      "bytes": 10563
+    },
+    {
+      "route": "technology/powercore-sst/sesst-10",
+      "file": "technology/powercore-sst/sesst-10/index.html",
+      "bytes": 10538
+    },
+    {
+      "route": "technology/thunderbird",
+      "file": "technology/thunderbird/index.html",
+      "bytes": 10470
+    },
+    {
+      "route": "technology/thunderbird/tb-007-13ah",
+      "file": "technology/thunderbird/tb-007-13ah/index.html",
+      "bytes": 10572
+    },
+    {
+      "route": "technology/thunderbird/tb-009-240ah",
+      "file": "technology/thunderbird/tb-009-240ah/index.html",
+      "bytes": 10602
+    },
+    {
+      "route": "technology/thunderbird/tb-qs-04ah-lto",
+      "file": "technology/thunderbird/tb-qs-04ah-lto/index.html",
+      "bytes": 10644
+    },
+    {
+      "route": "technology/thunderbird/tb-qs-08ah",
+      "file": "technology/thunderbird/tb-qs-08ah/index.html",
+      "bytes": 10561
+    },
+    {
+      "route": "technology/thunderbird/tb-qs-08ah-cold",
+      "file": "technology/thunderbird/tb-qs-08ah-cold/index.html",
+      "bytes": 10623
+    },
+    {
+      "route": "technology/wireless-power",
+      "file": "technology/wireless-power/index.html",
+      "bytes": 10559
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Dependencies and framework caches
+**/node_modules/
+**/.next/
+**/.vinext/
+**/.wrangler/
+**/coverage/
+
+# Generated build and temporary directories
+02_完整工程源码/dist/
+02_完整工程源码/site/
+02_完整工程源码/outputs/
+02_完整工程源码/work/
+02_完整工程源码/handoff-output/
+
+# Environment files and local logs
+**/.env*
+!**/.env.example
+*.log
+*.pem
+.DS_Store
+Thumbs.db
+
+# Generated deployment archives (reproducible and too large for source control)
+03_部署构建产物/*.tar
+02_完整工程源码/.openai/*.tar
