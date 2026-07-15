@@ -1,161 +1,103 @@
-# SEBO Vue 3 Migration Implementation Plan
+﻿# SEBO Vue 3 Migration Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
-**Goal:** 将 SEBO V6 完整迁移为 Vue 3，并保留 208 条中英文路由、内容、响应式视觉、SEO、离线交付和 `/api/leads` 表单。
-
-**Architecture:** 使用 Vue 3、TypeScript、Vite 和 Vue Router 构建单页应用，路由与页面数据由类型化模块驱动；Cloudflare Worker 与 D1 表单后端继续独立运行。静态生成脚本为每条公开路由创建目录入口、sitemap 与 robots，同时由自动化测试验证路由和资源完整性。
-
+**Goal:** 灏?SEBO V6 瀹屾暣杩佺Щ涓?Vue 3锛屽苟淇濈暀 208 鏉′腑鑻辨枃璺敱銆佸唴瀹广€佸搷搴斿紡瑙嗚銆丼EO銆佺绾夸氦浠樺拰 `/api/leads` 琛ㄥ崟銆?
+**Architecture:** 浣跨敤 Vue 3銆乀ypeScript銆乂ite 鍜?Vue Router 鏋勫缓鍗曢〉搴旂敤锛岃矾鐢变笌椤甸潰鏁版嵁鐢辩被鍨嬪寲妯″潡椹卞姩锛汣loudflare Worker 涓?D1 琛ㄥ崟鍚庣缁х画鐙珛杩愯銆傞潤鎬佺敓鎴愯剼鏈负姣忔潯鍏紑璺敱鍒涘缓鐩綍鍏ュ彛銆乻itemap 涓?robots锛屽悓鏃剁敱鑷姩鍖栨祴璇曢獙璇佽矾鐢卞拰璧勬簮瀹屾暣鎬с€?
 **Tech Stack:** Vue 3, Vue Router 4, TypeScript 5.9, Vite 8, Vitest, Vue Test Utils, Cloudflare Workers, Drizzle ORM, pnpm.
 
 ## Global Constraints
 
-- 保留验收清单中的全部 208 条中英文公开 URL。
-- 保留现有图片、文案、信息状态、品牌视觉和手机/PC 响应式布局。
-- 保留 `/api/leads` Worker、D1、安全头、校验、蜜罐、限流与唯一编号。
-- 运行依赖不得包含 React、React DOM、Next 或 Vinext。
-- 主要视口：1440×900、390×844；补充 1920×1080、1024×768、768×1024、375×812。
-- 不新增未经批准的产品规格、案例、下载资料或营销声明。
-
+- 淇濈暀楠屾敹娓呭崟涓殑鍏ㄩ儴 208 鏉′腑鑻辨枃鍏紑 URL銆?- 淇濈暀鐜版湁鍥剧墖銆佹枃妗堛€佷俊鎭姸鎬併€佸搧鐗岃瑙夊拰鎵嬫満/PC 鍝嶅簲寮忓竷灞€銆?- 淇濈暀 `/api/leads` Worker銆丏1銆佸畨鍏ㄥご銆佹牎楠屻€佽湝缃愩€侀檺娴佷笌鍞竴缂栧彿銆?- 杩愯渚濊禆涓嶅緱鍖呭惈 React銆丷eact DOM銆丯ext 鎴?Vinext銆?- 涓昏瑙嗗彛锛?440脳900銆?90脳844锛涜ˉ鍏?1920脳1080銆?024脳768銆?68脳1024銆?75脳812銆?- 涓嶆柊澧炴湭缁忔壒鍑嗙殑浜у搧瑙勬牸銆佹渚嬨€佷笅杞借祫鏂欐垨钀ラ攢澹版槑銆?
 ---
 
-### Task 1: Vue 工具链与测试基线
+### Task 1: Vue 宸ュ叿閾句笌娴嬭瘯鍩虹嚎
 
 **Files:**
-- Modify: `02_完整工程源码/package.json`
-- Modify: `02_完整工程源码/pnpm-lock.yaml`
-- Modify: `02_完整工程源码/vite.config.ts`
-- Create: `02_完整工程源码/index.html`
-- Create: `02_完整工程源码/src/main.ts`
-- Create: `02_完整工程源码/src/App.vue`
-- Create: `02_完整工程源码/vitest.config.ts`
-- Create: `02_完整工程源码/tests/framework.test.ts`
+- Modify: `02_瀹屾暣宸ョ▼婧愮爜/package.json`
+- Modify: `02_瀹屾暣宸ョ▼婧愮爜/pnpm-lock.yaml`
+- Modify: `02_瀹屾暣宸ョ▼婧愮爜/vite.config.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/index.html`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/main.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/App.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/vitest.config.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/tests/framework.test.ts`
 
 **Interfaces:**
-- Produces: Vite `dev/build/test` 命令和 Vue 应用挂载点 `#app`。
-
-- [ ] **Step 1: 写失败测试**：读取 `package.json`，断言包含 `vue`、`vue-router`、`@vitejs/plugin-vue`，且不存在 React/Next/Vinext。
-- [ ] **Step 2: 运行 `pnpm vitest run tests/framework.test.ts`**，预期因 Vitest/依赖尚未存在而失败。
-- [ ] **Step 3: 替换依赖与 Vite 配置**：使用 `vue@3.5`、`vue-router@4.6`、`@vitejs/plugin-vue@6`、`vitest@3`、`@vue/test-utils@2`、`jsdom`；保留 Cloudflare 与 Sites 插件。
-- [ ] **Step 4: 创建最小 Vue 入口并重新安装锁文件**。
-- [ ] **Step 5: 运行框架测试和生产构建，预期通过**。
-- [ ] **Step 6: 提交 `build: migrate toolchain to Vue 3`**。
-
-### Task 2: 公开路由、语言与内容数据
-
+- Produces: Vite `dev/build/test` 鍛戒护鍜?Vue 搴旂敤鎸傝浇鐐?`#app`銆?
+- [x] **Step 1: 鍐欏け璐ユ祴璇?*锛氳鍙?`package.json`锛屾柇瑷€鍖呭惈 `vue`銆乣vue-router`銆乣@vitejs/plugin-vue`锛屼笖涓嶅瓨鍦?React/Next/Vinext銆?- [x] **Step 2: 杩愯 `pnpm vitest run tests/framework.test.ts`**锛岄鏈熷洜 Vitest/渚濊禆灏氭湭瀛樺湪鑰屽け璐ャ€?- [x] **Step 3: 鏇挎崲渚濊禆涓?Vite 閰嶇疆**锛氫娇鐢?`vue@3.5`銆乣vue-router@4.6`銆乣@vitejs/plugin-vue@6`銆乣vitest@3`銆乣@vue/test-utils@2`銆乣jsdom`锛涗繚鐣?Cloudflare 涓?Sites 鎻掍欢銆?- [x] **Step 4: 鍒涘缓鏈€灏?Vue 鍏ュ彛骞堕噸鏂板畨瑁呴攣鏂囦欢**銆?- [x] **Step 5: 杩愯妗嗘灦娴嬭瘯鍜岀敓浜ф瀯寤猴紝棰勬湡閫氳繃**銆?- [x] **Step 6: 鎻愪氦 `build: migrate toolchain to Vue 3`**銆?
+### Task 2: 鍏紑璺敱銆佽瑷€涓庡唴瀹规暟鎹?
 **Files:**
-- Create: `02_完整工程源码/src/data/site.ts`
-- Create: `02_完整工程源码/src/data/routes.ts`
-- Create: `02_完整工程源码/src/lib/locale.ts`
-- Create: `02_完整工程源码/src/router/index.ts`
-- Create: `02_完整工程源码/tests/routes.test.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/data/site.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/data/routes.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/lib/locale.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/router/index.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/tests/routes.test.ts`
 
 **Interfaces:**
-- Produces: `publicRoutes: readonly string[]`, `allPublicPaths: readonly string[]`, `resolveLocale(path): Locale`, `localizedPath(path, locale): string`。
-
-- [ ] **Step 1: 写失败测试**：断言 `allPublicPaths` 有 208 个唯一项，包含 `/`、`/en`、代表性产品/应用/联系路径，并验证语言互转。
-- [ ] **Step 2: 运行路由测试，预期模块不存在而失败**。
-- [ ] **Step 3: 从原 `site-routes.ts` 和 `V6Site.tsx` 提取路由与内容数据，生成中英文路径并添加 catch-all 404**。
-- [ ] **Step 4: 运行路由测试，修正数量、重复和路径映射直到通过**。
-- [ ] **Step 5: 提交 `feat: add typed bilingual route model`**。
-
-### Task 3: 公共布局与响应式组件
+- Produces: `publicRoutes: readonly string[]`, `allPublicPaths: readonly string[]`, `resolveLocale(path): Locale`, `localizedPath(path, locale): string`銆?
+- [x] **Step 1: 鍐欏け璐ユ祴璇?*锛氭柇瑷€ `allPublicPaths` 鏈?208 涓敮涓€椤癸紝鍖呭惈 `/`銆乣/en`銆佷唬琛ㄦ€т骇鍝?搴旂敤/鑱旂郴璺緞锛屽苟楠岃瘉璇█浜掕浆銆?- [x] **Step 2: 杩愯璺敱娴嬭瘯锛岄鏈熸ā鍧椾笉瀛樺湪鑰屽け璐?*銆?- [x] **Step 3: 浠庡師 `site-routes.ts` 鍜?`V6Site.tsx` 鎻愬彇璺敱涓庡唴瀹规暟鎹紝鐢熸垚涓嫳鏂囪矾寰勫苟娣诲姞 catch-all 404**銆?- [x] **Step 4: 杩愯璺敱娴嬭瘯锛屼慨姝ｆ暟閲忋€侀噸澶嶅拰璺緞鏄犲皠鐩村埌閫氳繃**銆?- [x] **Step 5: 鎻愪氦 `feat: add typed bilingual route model`**銆?
+### Task 3: 鍏叡甯冨眬涓庡搷搴斿紡缁勪欢
 
 **Files:**
-- Create: `02_完整工程源码/src/components/SiteHeader.vue`
-- Create: `02_完整工程源码/src/components/SiteFooter.vue`
-- Create: `02_完整工程源码/src/components/PageHero.vue`
-- Create: `02_完整工程源码/src/components/SectionHead.vue`
-- Create: `02_完整工程源码/src/components/ContentCards.vue`
-- Create: `02_完整工程源码/src/components/ContactBand.vue`
-- Create: `02_完整工程源码/src/styles/main.css`
-- Create: `02_完整工程源码/tests/layout.test.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/components/SiteHeader.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/components/SiteFooter.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/components/PageHero.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/components/SectionHead.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/components/ContentCards.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/components/ContactBand.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/styles/main.css`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/tests/layout.test.ts`
 
 **Interfaces:**
-- Consumes: `Locale`, `localizedPath` 和站点数据。
-- Produces: 统一页面框架、键盘可用移动导航、卡片与首屏组件。
-
-- [ ] **Step 1: 写失败组件测试**：桌面导航存在；菜单按钮可展开移动导航；语言链接保持当前对应路径；主内容跳转链接存在。
-- [ ] **Step 2: 运行组件测试，预期组件不存在而失败**。
-- [ ] **Step 3: 实现公共组件并迁移原 CSS 变量、网格、断点、焦点和 reduced-motion 规则**。
-- [ ] **Step 4: 运行组件测试，预期通过且无 Vue 警告**。
-- [ ] **Step 5: 提交 `feat: add responsive Vue site shell`**。
-
-### Task 4: 页面与详情路由
-
+- Consumes: `Locale`, `localizedPath` 鍜岀珯鐐规暟鎹€?- Produces: 缁熶竴椤甸潰妗嗘灦銆侀敭鐩樺彲鐢ㄧЩ鍔ㄥ鑸€佸崱鐗囦笌棣栧睆缁勪欢銆?
+- [x] **Step 1: 鍐欏け璐ョ粍浠舵祴璇?*锛氭闈㈠鑸瓨鍦紱鑿滃崟鎸夐挳鍙睍寮€绉诲姩瀵艰埅锛涜瑷€閾炬帴淇濇寔褰撳墠瀵瑰簲璺緞锛涗富鍐呭璺宠浆閾炬帴瀛樺湪銆?- [x] **Step 2: 杩愯缁勪欢娴嬭瘯锛岄鏈熺粍浠朵笉瀛樺湪鑰屽け璐?*銆?- [x] **Step 3: 瀹炵幇鍏叡缁勪欢骞惰縼绉诲師 CSS 鍙橀噺銆佺綉鏍笺€佹柇鐐广€佺劍鐐瑰拰 reduced-motion 瑙勫垯**銆?- [x] **Step 4: 杩愯缁勪欢娴嬭瘯锛岄鏈熼€氳繃涓旀棤 Vue 璀﹀憡**銆?- [x] **Step 5: 鎻愪氦 `feat: add responsive Vue site shell`**銆?
+### Task 4: 椤甸潰涓庤鎯呰矾鐢?
 **Files:**
-- Create: `02_完整工程源码/src/pages/HomePage.vue`
-- Create: `02_完整工程源码/src/pages/SolutionsPage.vue`
-- Create: `02_完整工程源码/src/pages/TechnologyPage.vue`
-- Create: `02_完整工程源码/src/pages/LaidianlaPage.vue`
-- Create: `02_完整工程源码/src/pages/ApplicationsPage.vue`
-- Create: `02_完整工程源码/src/pages/ContentPage.vue`
-- Create: `02_完整工程源码/src/pages/AboutPage.vue`
-- Create: `02_完整工程源码/src/pages/DetailPage.vue`
-- Create: `02_完整工程源码/src/pages/NotFoundPage.vue`
-- Create: `02_完整工程源码/tests/pages.test.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/HomePage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/SolutionsPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/TechnologyPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/LaidianlaPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/ApplicationsPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/ContentPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/AboutPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/DetailPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/NotFoundPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/tests/pages.test.ts`
 
 **Interfaces:**
-- Consumes: 类型化内容数据和 `route.meta.pageType`。
-- Produces: 全部非联系页面视图；无匹配数据时渲染 404。
-
-- [ ] **Step 1: 写失败测试**：渲染首页、产品详情、应用筛选、中英文新闻页与未知详情；断言关键文案、图片和链接。
-- [ ] **Step 2: 运行页面测试，预期页面模块不存在而失败**。
-- [ ] **Step 3: 按业务域迁移原 JSX 内容，详情页根据路由数据渲染；应用筛选使用 `ref/computed`**。
-- [ ] **Step 4: 运行页面、布局和路由测试，预期全部通过**。
-- [ ] **Step 5: 提交 `feat: migrate SEBO pages to Vue`**。
-
-### Task 5: 联系表单与 Worker 保持一致
-
+- Consumes: 绫诲瀷鍖栧唴瀹规暟鎹拰 `route.meta.pageType`銆?- Produces: 鍏ㄩ儴闈炶仈绯婚〉闈㈣鍥撅紱鏃犲尮閰嶆暟鎹椂娓叉煋 404銆?
+- [x] **Step 1: 鍐欏け璐ユ祴璇?*锛氭覆鏌撻椤点€佷骇鍝佽鎯呫€佸簲鐢ㄧ瓫閫夈€佷腑鑻辨枃鏂伴椈椤典笌鏈煡璇︽儏锛涙柇瑷€鍏抽敭鏂囨銆佸浘鐗囧拰閾炬帴銆?- [x] **Step 2: 杩愯椤甸潰娴嬭瘯锛岄鏈熼〉闈㈡ā鍧椾笉瀛樺湪鑰屽け璐?*銆?- [x] **Step 3: 鎸変笟鍔″煙杩佺Щ鍘?JSX 鍐呭锛岃鎯呴〉鏍规嵁璺敱鏁版嵁娓叉煋锛涘簲鐢ㄧ瓫閫変娇鐢?`ref/computed`**銆?- [x] **Step 4: 杩愯椤甸潰銆佸竷灞€鍜岃矾鐢辨祴璇曪紝棰勬湡鍏ㄩ儴閫氳繃**銆?- [x] **Step 5: 鎻愪氦 `feat: migrate SEBO pages to Vue`**銆?
+### Task 5: 鑱旂郴琛ㄥ崟涓?Worker 淇濇寔涓€鑷?
 **Files:**
-- Create: `02_完整工程源码/src/pages/ContactPage.vue`
-- Create: `02_完整工程源码/src/composables/useLeadForm.ts`
-- Create: `02_完整工程源码/tests/lead-form.test.ts`
-- Preserve: `02_完整工程源码/worker/index.ts`
-- Preserve: `02_完整工程源码/db/schema.ts`
-- Preserve: `02_完整工程源码/drizzle/0000_flat_stick.sql`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/pages/ContactPage.vue`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/composables/useLeadForm.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/tests/lead-form.test.ts`
+- Preserve: `02_瀹屾暣宸ョ▼婧愮爜/worker/index.ts`
+- Preserve: `02_瀹屾暣宸ョ▼婧愮爜/db/schema.ts`
+- Preserve: `02_瀹屾暣宸ョ▼婧愮爜/drizzle/0000_flat_stick.sql`
 
 **Interfaces:**
-- Produces: `buildLeadPayload(form, context): LeadPayload` 与 `submitLead(payload): Promise<string>`。
-
-- [ ] **Step 1: 写失败测试**：负载包含姓名、单位、电话、邮箱、方向、类型、来源、语言、同意、营销和蜜罐；网络失败保留输入；成功返回编号。
-- [ ] **Step 2: 运行表单测试，预期 composable 不存在而失败**。
-- [ ] **Step 3: 实现 composable 与联系页，保持原字段、成功态、错误态和禁用态**。
-- [ ] **Step 4: 运行表单和 Worker 相关测试/构建，预期通过**。
-- [ ] **Step 5: 提交 `feat: migrate lead form to Vue`**。
-
-### Task 6: SEO、静态路由与离线输出
+- Produces: `buildLeadPayload(form, context): LeadPayload` 涓?`submitLead(payload): Promise<string>`銆?
+- [x] **Step 1: 鍐欏け璐ユ祴璇?*锛氳礋杞藉寘鍚鍚嶃€佸崟浣嶃€佺數璇濄€侀偖绠便€佹柟鍚戙€佺被鍨嬨€佹潵婧愩€佽瑷€銆佸悓鎰忋€佽惀閿€鍜岃湝缃愶紱缃戠粶澶辫触淇濈暀杈撳叆锛涙垚鍔熻繑鍥炵紪鍙枫€?- [x] **Step 2: 杩愯琛ㄥ崟娴嬭瘯锛岄鏈?composable 涓嶅瓨鍦ㄨ€屽け璐?*銆?- [x] **Step 3: 瀹炵幇 composable 涓庤仈绯婚〉锛屼繚鎸佸師瀛楁銆佹垚鍔熸€併€侀敊璇€佸拰绂佺敤鎬?*銆?- [x] **Step 4: 杩愯琛ㄥ崟鍜?Worker 鐩稿叧娴嬭瘯/鏋勫缓锛岄鏈熼€氳繃**銆?- [x] **Step 5: 鎻愪氦 `feat: migrate lead form to Vue`**銆?
+### Task 6: SEO銆侀潤鎬佽矾鐢变笌绂荤嚎杈撳嚭
 
 **Files:**
-- Create: `02_完整工程源码/src/composables/usePageMeta.ts`
-- Create: `02_完整工程源码/scripts/generate-static-routes.mjs`
-- Modify: `02_完整工程源码/scripts/package-site-windows.ps1`
-- Create: `02_完整工程源码/tests/static-output.test.ts`
-- Modify: `02_完整工程源码/public/_headers`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/src/composables/usePageMeta.ts`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/scripts/generate-static-routes.mjs`
+- Modify: `02_瀹屾暣宸ョ▼婧愮爜/scripts/package-site-windows.ps1`
+- Create: `02_瀹屾暣宸ョ▼婧愮爜/tests/static-output.test.ts`
+- Modify: `02_瀹屾暣宸ョ▼婧愮爜/public/_headers`
 
 **Interfaces:**
-- Produces: `dist/client` 或 `dist` 中 208 个可访问目录入口、`sitemap.xml`、`robots.txt` 和 SPA fallback。
-
-- [ ] **Step 1: 写失败测试**：构建输出包含全部公开路径入口、sitemap、robots、OG 图与无缺失资源。
-- [ ] **Step 2: 运行静态输出测试，预期生成脚本不存在而失败**。
-- [ ] **Step 3: 实现页面元数据与构建后静态路由生成；更新离线打包脚本**。
-- [ ] **Step 4: 运行生产构建和静态输出测试，预期 208/208 路由通过**。
-- [ ] **Step 5: 提交 `feat: generate SEO and offline route output`**。
-
-### Task 7: 全量验证、清理与推送
-
+- Produces: `dist/client` 鎴?`dist` 涓?208 涓彲璁块棶鐩綍鍏ュ彛銆乣sitemap.xml`銆乣robots.txt` 鍜?SPA fallback銆?
+- [x] **Step 1: 鍐欏け璐ユ祴璇?*锛氭瀯寤鸿緭鍑哄寘鍚叏閮ㄥ叕寮€璺緞鍏ュ彛銆乻itemap銆乺obots銆丱G 鍥句笌鏃犵己澶辫祫婧愩€?- [x] **Step 2: 杩愯闈欐€佽緭鍑烘祴璇曪紝棰勬湡鐢熸垚鑴氭湰涓嶅瓨鍦ㄨ€屽け璐?*銆?- [x] **Step 3: 瀹炵幇椤甸潰鍏冩暟鎹笌鏋勫缓鍚庨潤鎬佽矾鐢辩敓鎴愶紱鏇存柊绂荤嚎鎵撳寘鑴氭湰**銆?- [x] **Step 4: 杩愯鐢熶骇鏋勫缓鍜岄潤鎬佽緭鍑烘祴璇曪紝棰勬湡 208/208 璺敱閫氳繃**銆?- [x] **Step 5: 鎻愪氦 `feat: generate SEO and offline route output`**銆?
+### Task 7: 鍏ㄩ噺楠岃瘉銆佹竻鐞嗕笌鎺ㄩ€?
 **Files:**
-- Modify: `02_完整工程源码/README.md`
+- Modify: `02_瀹屾暣宸ョ▼婧愮爜/README.md`
 - Modify: `README.md`
-- Remove: `02_完整工程源码/app/**`
-- Remove: React/Next/Vinext 专用配置。
-
+- Remove: `02_瀹屾暣宸ョ▼婧愮爜/app/**`
+- Remove: React/Next/Vinext 涓撶敤閰嶇疆銆?
 **Interfaces:**
-- Produces: 可安装、测试、构建、离线浏览和部署的最终 Vue 3 项目。
-
-- [ ] **Step 1: 运行 `pnpm test`，预期所有测试通过且无警告**。
-- [ ] **Step 2: 运行 `pnpm run lint` 与 `pnpm run build`，预期退出码 0**。
-- [ ] **Step 3: 搜索依赖和源码，确认不存在 React、React DOM、Next、Vinext 运行引用**。
-- [ ] **Step 4: 启动本地站点，验证 1440×900、390×844 和补充视口；检查导航、筛选、表单、404 与横向溢出**。
-- [ ] **Step 5: 核对 208 条路由、资源清单和 Worker 接口验收项**。
-- [ ] **Step 6: 更新文档，提交 `docs: complete Vue 3 migration handoff`，推送 `feat/vue3-migration`**。
+- Produces: 鍙畨瑁呫€佹祴璇曘€佹瀯寤恒€佺绾挎祻瑙堝拰閮ㄧ讲鐨勬渶缁?Vue 3 椤圭洰銆?
+- [x] **Step 1: 杩愯 `pnpm test`锛岄鏈熸墍鏈夋祴璇曢€氳繃涓旀棤璀﹀憡**銆?- [x] **Step 2: 杩愯 `pnpm run lint` 涓?`pnpm run build`锛岄鏈熼€€鍑虹爜 0**銆?- [x] **Step 3: 鎼滅储渚濊禆鍜屾簮鐮侊紝纭涓嶅瓨鍦?React銆丷eact DOM銆丯ext銆乂inext 杩愯寮曠敤**銆?- [x] **Step 4: 鍚姩鏈湴绔欑偣锛岄獙璇?1440脳900銆?90脳844 鍜岃ˉ鍏呰鍙ｏ紱妫€鏌ュ鑸€佺瓫閫夈€佽〃鍗曘€?04 涓庢í鍚戞孩鍑?*銆?- [x] **Step 5: 鏍稿 208 鏉¤矾鐢便€佽祫婧愭竻鍗曞拰 Worker 鎺ュ彛楠屾敹椤?*銆?- [x] **Step 6: 鏇存柊鏂囨。锛屾彁浜?`docs: complete Vue 3 migration handoff`锛屾帹閫?`feat/vue3-migration`**銆?

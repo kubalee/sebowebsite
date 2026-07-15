@@ -97,6 +97,17 @@ export const publicRoutes = [
 const routeSet = new Set<string>(publicRoutes);
 const serviceStartRoutes = new Set(publicRoutes.filter(route => route.startsWith("laidianla/") && route !== "laidianla/start").map(route => `${route}/start`));
 
+const chinesePaths = [
+  "/",
+  ...publicRoutes.map((route) => `/${route}`),
+  ...Array.from(serviceStartRoutes, (route) => `/${route}`),
+];
+
+export const allPublicPaths = [
+  ...chinesePaths,
+  ...chinesePaths.map((path) => (path === "/" ? "/en" : `/en${path}`)),
+] as const;
+
 export function isPublicRoute(route: string) {
   const bare = route.replace(/^en\/?/, "").replace(/^\/+|\/+$/g, "");
   return bare === "" || routeSet.has(bare as (typeof publicRoutes)[number]) || serviceStartRoutes.has(bare) || bare.startsWith("cases/");

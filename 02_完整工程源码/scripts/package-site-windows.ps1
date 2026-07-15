@@ -5,12 +5,17 @@ param(
 $ErrorActionPreference = "Stop"
 $ProjectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $Dist = Join-Path $ProjectRoot "dist"
-$ServerEntry = Join-Path $Dist "server\index.js"
+$WorkerEntry = Join-Path $Dist "sebo_website_vue3\index.js"
+$ClientEntry = Join-Path $Dist "client\index.html"
 $HostingSource = Join-Path $ProjectRoot ".openai\hosting.json"
 $HostingTargetDirectory = Join-Path $Dist ".openai"
 
-if (-not (Test-Path -LiteralPath $ServerEntry)) {
-  throw "Missing dist/server/index.js"
+if (-not (Test-Path -LiteralPath $WorkerEntry)) {
+  throw "Missing dist/sebo_website_vue3/index.js"
+}
+
+if (-not (Test-Path -LiteralPath $ClientEntry)) {
+  throw "Missing dist/client/index.html"
 }
 
 if (-not (Test-Path -LiteralPath $HostingSource)) {
@@ -43,8 +48,12 @@ if ($LASTEXITCODE -ne 0) {
   throw "Unable to inspect Sites archive"
 }
 
-if ($Entries -notcontains "dist/server/index.js") {
-  throw "Sites archive is missing dist/server/index.js"
+if ($Entries -notcontains "dist/sebo_website_vue3/index.js") {
+  throw "Sites archive is missing the Vue 3 Worker entry"
+}
+
+if ($Entries -notcontains "dist/client/index.html") {
+  throw "Sites archive is missing the Vue 3 client entry"
 }
 
 if ($Entries -notcontains "dist/.openai/hosting.json") {

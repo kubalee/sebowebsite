@@ -1,5 +1,6 @@
 import { cloudflare } from "@cloudflare/vite-plugin";
 import vue from "@vitejs/plugin-vue";
+import vueJsx from "@vitejs/plugin-vue-jsx";
 import { defineConfig } from "vite";
 import hostingConfig from "./.openai/hosting.json";
 import { sites } from "./build/sites-vite-plugin";
@@ -12,11 +13,16 @@ const { d1, r2 } = hostingConfig;
 export default defineConfig({
   plugins: [
     vue(),
+    vueJsx(),
     sites(),
     cloudflare({
       config: {
         main: "./worker/index.ts",
         compatibility_flags: ["nodejs_compat"],
+        assets: {
+          binding: "ASSETS",
+          not_found_handling: "single-page-application",
+        },
         d1_databases: d1
           ? [
               {
